@@ -78,7 +78,7 @@ plot.eHTE_class <- function(x){
   lines(ecdf_pbo, col="blue")
   legend("bottomright", legend = c("Placebo (control)", "Drug (active)"),
          col = c("blue", "red"), lwd = 2)
-  plot(y=(1:length(x$D_xi))/length(x$D_xi),x=x$D_xi,col="red",pch=19,xlab="Sz Score",ylab="",yaxt="n")
+  plot(y=(1:length(x$D_xi))/length(x$D_xi),x=ecdf_drug-ecdf_pbo,col="red",pch=19,xlab="Sz Score Diff from PCB",ylab="",yaxt="n")
   layout(1)
 }
 
