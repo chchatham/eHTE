@@ -36,7 +36,7 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' Compute a p-value of an obtained eHTE estimate, using non-parametric permutation of the individuals in the placebo/control and drug/active arms. This p-value represents the proportion of observations from the permuted null distribution which are equally or more extreme than the value estimated using estimateHTE(). As such, this is a one-sided p-value for testing whether there is greater evidence for treatment effect heterogeneity in the active than in the control condition.
 #'
 #' @param estimateHTE_result An object of class eHTE_class - for example, the result of estimateHTE()
-#' @param n_perm The number of permutations desired. Default = 100.
+#' @param n_perm The number of permutations desired. Default = 1000.
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
 #' @examples
 #' # Basic usage
@@ -44,7 +44,7 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' result <- testHTE(eHTE)
 #' summary(result)
 #' @export
-testHTE <- function(estimateHTE_result,n_perm=100){
+testHTE <- function(estimateHTE_result,n_perm=1000){
   perm_arm_ur <- c(estimateHTE_result$placebo_arm,estimateHTE_result$drug_arm)
   pb = txtProgressBar(min = 0, max = n_perm, initial = 0,style = 3)
   null_eHTE <- rep(NA,n_perm)

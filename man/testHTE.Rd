@@ -4,12 +4,12 @@
 \alias{testHTE}
 \title{testHTE}
 \usage{
-testHTE(estimateHTE_result, n_perm = 100)
+testHTE(estimateHTE_result, n_perm = 1000)
 }
 \arguments{
 \item{estimateHTE_result}{An object of class eHTE_class - for example, the result of estimateHTE()}
 
-\item{n_perm}{The number of permutations desired. Default = 100.}
+\item{n_perm}{The number of permutations desired. Default = 1000.}
 }
 \value{
 A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
