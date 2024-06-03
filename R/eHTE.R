@@ -78,7 +78,7 @@ plot.eHTE_class <- function(x){
   lines(ecdf_pbo, col="blue")
   legend("bottomright", legend = c("Placebo (control)", "Drug (active)"),
          col = c("blue", "red"), lwd = 2)
-  plot(y=(1:length(x$D_xi))/length(x$D_xi),x=x$D_xi,col="red",pch=19,xlab="Sz Score",ylab="")
+  plot(y=(1:length(x$D_xi))/length(x$D_xi),x=x$D_xi,col="red",pch=19,xlab="Sz Score",ylab="",yaxt="n")
   layout(1)
 }
 
@@ -93,6 +93,9 @@ summary.eHTE_class <- function(x){
   cat(paste0("Number of Observations, Active Condition (e.g., drug): ",x$n_act,"\n\n",sep=""))
   cat("Output:\n")
   cat(paste0("eHTE estimate: ",x$eHTE,"\n",sep=""))
-  cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,"\n",sep=""))
-  if(is.null(x$pval)){warning("To compute a p-value, you must call the testHTE()")}
+  if(!is.null(x$pval)){
+    cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,"\n",sep=""))
+  } else {
+    warning("To compute a p-value, you must first call testHTE() on the result of estimateHTE()")
+  }
 }
