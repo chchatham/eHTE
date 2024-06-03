@@ -7,7 +7,7 @@
 #' @param pctiles A vector of percentiles at which to evaluate the drug/placebo difference. Default is a vector of percentiles between the 3rd and 97th at increments of 2 (as in Siegel et al 2024).
 #' @return An custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
 #' @export
-eHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100){
+estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100){
   n_pbo <- length(placebo_arm)
   n_act <- length(drug_arm)
   quantiles_placebo <- quantile(placebo_arm,probs=pctiles)
