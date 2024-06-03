@@ -18,7 +18,15 @@ The main functions in this package are:
 }
 }
 
+\section{Example data}{
+
+Example data is included in this package, as well:
+\itemize{
+\item \code{\link{loebel_data}}: Example dataset from Loebel et al 2013, digitized from Siegel et al 2024 Fig 3A.
+}
+}
+
 \author{
-Chris Chathan \email{chathach@gmail.com}
+Chris Chatham \email{chathach@gmail.com}
 }
 \keyword{package}

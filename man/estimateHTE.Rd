@@ -24,7 +24,7 @@ A custom object of class 'eHTE_class', which accepts methods summary(), plot(), 
 Estimates the eHTE test statistic for two samples of possibly uneven length.
 }
 \examples{
-# Basic Uage
+# Basic Usage
 result <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
 plot(result)
 summary(result)

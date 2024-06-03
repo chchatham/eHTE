@@ -7,7 +7,7 @@
 #' @param pctiles A vector of percentiles at which to evaluate the drug/placebo difference. Default is a vector of percentiles between the 3rd and 97th at increments of 2 (as in Siegel et al 2024).
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print(). P-value will be null until testHTE() is run on the result.
 #' @examples
-#' # Basic Uage
+#' # Basic Usage
 #' result <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
 #' plot(result)
 #' summary(result)
