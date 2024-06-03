@@ -6,11 +6,11 @@ This package provides functions for assessing treatment effect heterogeneity, as
 
 ## Installation
 
-You can install the development version from GitHub:
+You can install the development version from GitHub using R or R Studio, as follows:
 
 ```r
 # Install devtools if you haven't already
 install.packages("devtools")
 
 # Install the package from GitHub
-devtools::install_github("your-username/your-repo-name")
+devtools::install_github("chchatham/eHTE")
