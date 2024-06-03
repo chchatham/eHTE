@@ -9,6 +9,11 @@
 #'   \item \code{\link{estimateHTE}}: Estimates the eHTE metric of Siegel et al.
 #'   \item \code{\link{testHTE}}: Tests the eHTE metric using the non-parameteric permutation method described by Siegel et al.  
 #' }
+#' @section Datasets:
+#' The example dataset provided with this package is:
+#' \itemize{
+#'   \item \code{\link{loebel_data}}: An approximation of the Loebel et al 2013 data analyzed by Siegel et al 2024 for evidence of HTE.
+#' } 
 #' @docType package
 #' @name eHTE
 #' @aliases eHTE-package

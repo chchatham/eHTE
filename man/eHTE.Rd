@@ -18,6 +18,14 @@ The main functions in this package are:
 }
 }
 
+\section{Datasets}{
+
+The example dataset provided with this package is:
+\itemize{
+\item \code{\link{loebel_data}}: An approximation of the Loebel et al 2013 data analyzed by Siegel et al 2024 for evidence of HTE.
+}
+}
+
 \author{
 Chris Chatham \email{chathach@gmail.com}
 }
