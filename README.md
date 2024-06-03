@@ -14,3 +14,18 @@ install.packages("devtools")
 
 # Install the package from GitHub
 devtools::install_github("chchatham/eHTE")
+
+
+## Basic Usage
+
+You can view the documentation for the package and functions within it, as follows:
+
+```r
+# Check help for eHTE package
+?eHTE
+
+# Compute the eHTE estimator of Siegel et al 2024 on the approximated (manually-digitized) data of Loebel et al 2013, with Quetiapine: 
+result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
+
+# Plot the result (approximating Figure 3A, bottom panel, of Siegel et al 2024)
+plot(result)
