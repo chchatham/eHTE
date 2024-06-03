@@ -1,0 +1,11 @@
+#' Loebel et al 2013 Example Dataset
+#'
+#' This is a digitization of the Loebel et al 2013 patient-level change data, extracted from Siegel et al, 2024: https://www.medrxiv.org/content/10.1101/2024.04.23.24306211v1
+#'
+#' @format A dataframe with 361 rows (each a distinct patient) and 2 columns: 
+#' \describe{
+#'  \item{arm}{Arm of the study: placebo, lurasidone 80mg, lurasidone 160mg, or quetiapine}
+#'  \item{PANSSchg}{Change from Baseline on the PANSS}
+#'  }
+#'  @source Source of the data is Loebel, A., Cucchiaro, J., Sarma, K., Xu, L., Hsu, C., Kalali, A. H., Pikalov, A., & Potkin, S. G. (2013). Efficacy and safety of lurasidone 80mg/day and 160mg/day in the treatment of schizophrenia: A randomized, double-blind, placebo- and active-controlled trial. Schizophrenia Research, 145(1), 101–109. doi:10.1016/j.schres.2013.01.009, as digitized from Figure 3A of Siegel, J. S., Zhong, J., Tomioka, S., Ogirala, A., Faraone, S. V., Szabo, S. T., ... & Hopkins, S. C. (2024). Estimating heterogeneity of treatment effect in psychiatric clinical trials. medRxiv: https://www.medrxiv.org/content/10.1101/2024.04.23.24306211v1.full-text
+#'  @name loebel_data
