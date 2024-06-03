@@ -46,6 +46,7 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' @export
 testHTE <- function(estimateHTE_result,n_perm=1000){
   perm_arm_ur <- c(estimateHTE_result$placebo_arm,estimateHTE_result$drug_arm)
+  cat("Conducting permutation tests. Progress:\n")
   pb = txtProgressBar(min = 0, max = n_perm, initial = 0,style = 3)
   null_eHTE <- rep(NA,n_perm)
   for(n in 1:n_perm){
@@ -108,7 +109,7 @@ summary.eHTE_class <- function(x){
   cat("Output:\n")
   cat(paste0("eHTE estimate: ",x$eHTE,"\n",sep=""))
   if(!is.null(x$pval)){
-    cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,"\n",sep=""))
+    cat(paste0("eHTE p-value (one-sided, testing the null hypothesis that treatment effects are no more variable on drug than placebo): ",x$pval,"\n",sep=""))
   } else {
     warning("To compute a p-value, you must first call testHTE() on the result of estimateHTE()")
   }
