@@ -20,6 +20,7 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
                  placebo_arm=placebo_arm,
                  drug_arm=drug_arm,
                  pctiles=pctiles,
+                 D_xi=D_xi,
                  pval=NULL)
   class(result) <- "eHTE_class"
   return(result)
@@ -55,6 +56,7 @@ testHTE <- function(estimateHTE_result,n_perm=100){
                  placebo_arm=estimateHTE_result$placebo_arm,
                  drug_arm=estimateHTE_result$drug_arm,
                  pctiles=estimateHTE_result$pctiles,
+                 D_xi=estimateHTE_result$D_xi,
                  pval=length(which(null_eHTE>=estimateHTE_result$eHTE))/length(null_eHTE))
   class(result) <- "eHTE_class"
   return(result)
@@ -76,7 +78,7 @@ plot.eHTE_class <- function(x){
   lines(ecdf_pbo, col="blue")
   legend("bottomright", legend = c("Placebo (control)", "Drug (active)"),
          col = c("blue", "red"), lwd = 2)
-  hist(x$drug_arm)
+  plot(x=1:length(x$D_xi),y=x$D_xi,col="red",pch=19,xlab="Sz Score",ylab="")
   layout(1)
 }
 
@@ -90,7 +92,7 @@ summary.eHTE_class <- function(x){
   cat(paste0("Number of Observations, Control Condition (e.g., placebo): ",x$n_pbo,"\n",sep=""))
   cat(paste0("Number of Observations, Active Condition (e.g., drug): ",x$n_act,"\n",sep=""))
   cat("Output:\n")
-  cat(paste0("eHTE estimate: ",x$eHTE,sep=""))
-  cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,sep=""))
+  cat(paste0("eHTE estimate: ",x$eHTE,"\n",sep=""))
+  cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,"\n",sep=""))
   if(is.null(x$pval)){warning("To compute a p-value, you must call the testHTE()")}
 }
