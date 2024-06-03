@@ -38,10 +38,10 @@ testHTE <- function(estimateHTE_result,n_perm=100){
   pb = txtProgressBar(min = 0, max = n_perm, initial = 0,style = 3) 
   for(n in 1:n_perm){
     perm_arm <- sample(perm_arm_ur)
-    placebo_arm <- perm_arm[1:n_pbo]
-    drug_arm <- perm_arm[(n_pbo+1):length(perm_arm)]
+    placebo_arm <- perm_arm[1:estimateHTE_result$n_pbo]
+    drug_arm <- perm_arm[(estimateHTE_result$n_pbo+1):length(perm_arm)]
     placebo_sd <- sd(placebo_arm)
-    null_eHTE[n] <- eHTE_estimate(placebo_arm,drug_arm,pctiles,placebo_sd)
+    null_eHTE[n] <- eHTE_estimate(placebo_arm,drug_arm,estimateHTE_result$pctiles,placebo_sd)
     setTxtProgressBar(pb,n)
   }
   close(pb)
