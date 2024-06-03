@@ -14,7 +14,7 @@ install.packages("devtools")
 
 # Install the package from GitHub
 devtools::install_github("chchatham/eHTE")
-
+```
 
 ## Basic Usage
 
@@ -29,3 +29,4 @@ result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_
 
 # Plot the result (approximating Figure 3A, bottom panel, of Siegel et al 2024)
 plot(result)
+```
