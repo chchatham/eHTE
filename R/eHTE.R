@@ -8,7 +8,7 @@
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print(). P-value will be null until testHTE() is run on the result.
 #' @examples
 #' # Basic Usage
-#' result <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
+#' result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
 #' plot(result)
 #' summary(result)
 #' @export
@@ -40,8 +40,8 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
 #' @examples
 #' # Basic usage
-#' eHTE <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
-#' result <- testHTE(eHTE)
+#' result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
+#' result <- testHTE(result)
 #' summary(result)
 #' @export
 testHTE <- function(estimateHTE_result,n_perm=1000){
@@ -94,6 +94,7 @@ plot.eHTE_class <- function(x){
   legend("bottomright", legend = c("Placebo (control)", "Drug (active)"),
          col = c("blue", "red"), lwd = 2)
   plot(y=(1:length(x$D_xi))/length(x$D_xi),x=x$D_xi,col="red",pch=19,xlab="Sz Score Diff from PCB",ylab="",yaxt="n")
+  abline(v=0,col="blue")
   layout(1)
 }
 

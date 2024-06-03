@@ -19,7 +19,7 @@ Compute a p-value of an obtained eHTE estimate, using non-parametric permutation
 }
 \examples{
 # Basic usage
-eHTE <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
-result <- testHTE(eHTE)
+result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
+result <- testHTE(result)
 summary(result)
 }

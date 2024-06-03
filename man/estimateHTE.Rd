@@ -25,7 +25,7 @@ Estimates the eHTE test statistic for two samples of possibly uneven length.
 }
 \examples{
 # Basic Usage
-result <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
+result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
 plot(result)
 summary(result)
 }
