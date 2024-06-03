@@ -35,13 +35,17 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' @export
 testHTE <- function(estimateHTE_result,n_perm=100){
   perm_arm_ur <- c(estimateHTE_result$placebo_arm,estimateHTE_result$drug_arm)
-  pb = txtProgressBar(min = 0, max = n_perm, initial = 0,style = 3) 
+  pb = txtProgressBar(min = 0, max = n_perm, initial = 0,style = 3)
+  null_eHTE <- rep(NA,n_perm)
   for(n in 1:n_perm){
     perm_arm <- sample(perm_arm_ur)
     placebo_arm <- perm_arm[1:estimateHTE_result$n_pbo]
     drug_arm <- perm_arm[(estimateHTE_result$n_pbo+1):length(perm_arm)]
     placebo_sd <- sd(placebo_arm)
-    null_eHTE[n] <- eHTE_estimate(placebo_arm,drug_arm,estimateHTE_result$pctiles,placebo_sd)
+    quantiles_placebo <- quantile(placebo_arm,probs=pctiles)
+    quantiles_drug <- quantile(drug_arm,probs=pctiles)
+    D_xi <- quantiles_drug - quantiles_placebo
+    null_eHTE[n] <- sd(D_xi) / placebo_sd
     setTxtProgressBar(pb,n)
   }
   close(pb)
