@@ -6,7 +6,7 @@
 \title{Loebel et al 2013 Example Dataset}
 \format{
 A dataframe with 361 rows (each a distinct patient) and 2 columns:
-\describe{
+\itemize{
 \item{arm}{Arm of the study: placebo, lurasidone 80mg, lurasidone 160mg, or quetiapine}
 \item{PANSSchg}{Change from Baseline on the PANSS}
 }

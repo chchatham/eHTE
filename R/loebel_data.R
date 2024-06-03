@@ -6,7 +6,7 @@
 #' @name loebel_data
 #' @usage data(loebel_data)
 #' @format A dataframe with 361 rows (each a distinct patient) and 2 columns: 
-#' \describe{
+#' \itemize{
 #'  \item{arm}{Arm of the study: placebo, lurasidone 80mg, lurasidone 160mg, or quetiapine}
 #'  \item{PANSSchg}{Change from Baseline on the PANSS}
 #'  }
