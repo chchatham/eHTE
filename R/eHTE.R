@@ -6,6 +6,11 @@
 #' @param drug_arm A vector of patient-level treatment effects from the active condition (e.g., active drug).
 #' @param pctiles A vector of percentiles at which to evaluate the drug/placebo difference. Default is a vector of percentiles between the 3rd and 97th at increments of 2 (as in Siegel et al 2024).
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print(). P-value will be null until testHTE() is run on the result.
+#' @examples
+#' # Basic Uage
+#' result <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
+#' plot(result)
+#' summary(result)
 #' @export
 estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100){
   n_pbo <- length(placebo_arm)
@@ -33,6 +38,11 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' @param estimateHTE_result An object of class eHTE_class - for example, the result of estimateHTE()
 #' @param n_perm The number of permutations desired. Default = 100.
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
+#' @examples
+#' # Basic usage
+#' eHTE <- estimateHTE(placebo_arm=rnorm(100,mean=0,sd=1),drug_arm=rnorm(120,mean=.5,sd=1.5))
+#' result <- testHTE(eHTE)
+#' summary(result)
 #' @export
 testHTE <- function(estimateHTE_result,n_perm=100){
   perm_arm_ur <- c(estimateHTE_result$placebo_arm,estimateHTE_result$drug_arm)

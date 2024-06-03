@@ -19,7 +19,6 @@ The main functions in this package are:
 }
 
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
-
+Chris Chathan \email{chathach@gmail.com}
 }
 \keyword{package}

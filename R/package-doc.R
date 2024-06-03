@@ -14,4 +14,6 @@
 #' @name eHTE
 #' @aliases eHTE-package
 #' @keywords package
+#' @author
+#' Chris Chathan \email{chathach@gmail.com}
 "_PACKAGE"
