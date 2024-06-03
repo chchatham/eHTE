@@ -1,4 +1,4 @@
-#' eHTE
+#' estimateHTE
 #'
 #' Estimates the eHTE test statistic for two samples of possibly uneven length.
 #'
