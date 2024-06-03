@@ -61,7 +61,7 @@ testHTE <- function(estimateHTE_result,n_perm=1000){
   }
   close(pb)
   pval <- length(which(null_eHTE>=estimateHTE_result$eHTE))/length(null_eHTE)
-  if(pval=0){
+  if(pval==0){
     pval <- paste0("p <= ",0.5/n_perm,sep="")
   }
   result <- list(eHTE = estimateHTE_result$eHTE,
