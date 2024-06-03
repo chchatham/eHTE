@@ -18,7 +18,7 @@ estimateHTE(
 \item{pctiles}{A vector of percentiles at which to evaluate the drug/placebo difference. Default is a vector of percentiles between the 3rd and 97th at increments of 2 (as in Siegel et al 2024).}
 }
 \value{
-An custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
+A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
 }
 \description{
 Estimates the eHTE test statistic for two samples of possibly uneven length.
