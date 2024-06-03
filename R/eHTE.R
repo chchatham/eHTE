@@ -71,8 +71,7 @@ print.eHTE_class <- function(x){
 plot.eHTE_class <- function(x){
   ecdf_drug <- ecdf(x$drug_arm)
   ecdf_pbo <- ecdf(x$placebo_arm)
-  layout_matrix <- matrix(c(1, 2), nrow = 1, ncol = 2)
-  layout_widths <- c(2, 1)  # Left column twice as wide as the right column
+  layout(matrix(c(1, 1, 2), nrow = 1, byrow = TRUE))
   plot(ecdf_drug, main = "Empirical Cumulative Distribution Functions", xlab="Sx Score", ylab="Cumulative Percentile", col="red")
   lines(ecdf_pbo, col="blue")
   legend("bottomright", legend = c("Placebo (control)", "Drug (active)"),
@@ -92,4 +91,6 @@ summary.eHTE_class <- function(x){
   cat(paste0("Number of Observations, Active Condition (e.g., drug): ",x$n_act,"\n",sep=""))
   cat("Output:\n")
   cat(paste0("eHTE estimate: ",x$eHTE,sep=""))
+  cat(paste0("eHTE p-value (one-sided, for greater HTE in drug than placebo): ",x$pval,sep=""))
+  if(is.null(x$pval)){warning("To compute a p-value, you must call the testHTE()")}
 }
