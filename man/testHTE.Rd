@@ -18,8 +18,14 @@ A custom object of class 'eHTE_class', which accepts methods summary(), plot(), 
 Compute a p-value of an obtained eHTE estimate, using non-parametric permutation of the individuals in the placebo/control and drug/active arms. This p-value represents the proportion of observations from the permuted null distribution which are equally or more extreme than the value estimated using estimateHTE(). As such, this is a one-sided p-value for testing whether there is greater evidence for treatment effect heterogeneity in the active than in the control condition.
 }
 \examples{
-# Basic usage
+# Basic usage: Example #1
 result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
 result <- testHTE(result)
 summary(result)
+plot(result)
+# Basic usage: Example #2
+result <- estimateHTE(raison_data[raison_data$arm=="Placebo","MADRSchg"],raison_data[raison_data$arm=="Psilocybin","MADRSchg"])
+result <- testHTE(result)
+summary(result)
+plot(result)
 }

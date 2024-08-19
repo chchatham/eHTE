@@ -39,10 +39,16 @@ estimateHTE <- function(placebo_arm,drug_arm,pctiles=seq(from=3,to=97,by=2)/100)
 #' @param n_perm The number of permutations desired. Default = 1000.
 #' @return A custom object of class 'eHTE_class', which accepts methods summary(), plot(), and print().
 #' @examples
-#' # Basic usage
+#' # Basic usage: Example #1
 #' result <- estimateHTE(loebel_data[loebel_data$arm=="placebo","PANSSchg"],loebel_data[loebel_data$arm=="quetiapine","PANSSchg"])
 #' result <- testHTE(result)
 #' summary(result)
+#' plot(result)
+#' # Basic usage: Example #2
+#' result <- estimateHTE(raison_data[raison_data$arm=="Placebo","MADRSchg"],raison_data[raison_data$arm=="Psilocybin","MADRSchg"])
+#' result <- testHTE(result)
+#' summary(result)
+#' plot(result)
 #' @export
 testHTE <- function(estimateHTE_result,n_perm=1000){
   perm_arm_ur <- c(estimateHTE_result$placebo_arm,estimateHTE_result$drug_arm)
