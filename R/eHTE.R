@@ -77,12 +77,6 @@ testHTE <- function(estimateHTE_result,n_perm=1000){
   return(result)
 }
 
-# Custom print method for class eHTE_class
-#' @export
-print.eHTE_class <- function(x){
-  print.default(x)
-}
-
 # Custom plot method for class eHTE_class
 #' @export
 plot.eHTE_class <- function(x){
