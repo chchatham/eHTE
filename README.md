@@ -21,6 +21,9 @@ devtools::install_github("chchatham/eHTE")
 You can view the documentation for the package and functions within it, as follows:
 
 ```r
+#Load the eHTE package
+library(eHTE)
+
 # Check help for eHTE package
 ?eHTE
 
