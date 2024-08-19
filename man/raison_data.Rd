@@ -7,11 +7,11 @@
 \format{
 A dataframe with 94 rows (each a distinct patient) and 5 columns:
 \itemize{
-\item{SUBJID}{Subject ID: Sub1, Sub2, etc}
-\item{arm}{Arm of the study: Placebo, or Psilocybin}
-\item{Baseline}{Baseline on the MADRS}
-\item{Week 6}{Week 6 on the MADRS}
-\item{MADRSchg}{Change from Baseline at Week 6 on the MADRS}
+\item \strong{SUBJID}: Subject ID (e.g., Sub1, Sub2, etc.)
+\item \strong{arm}: Arm of the study (e.g., Placebo or Psilocybin)
+\item \strong{Baseline}: Baseline on the MADRS
+\item \strong{Week 6}: Week 6 on the MADRS
+\item \strong{MADRSchg}: Change from Baseline at Week 6 on the MADRS
 }
 @section Source:
 This data was retrieved from \href{https://gitlab.com/siegelandthebrain1/ehte/-/tree/main/eHTE_matlab_package?ref_type=heads}{Joshua Siegel's Gitlab Page for his eHTE package}.
